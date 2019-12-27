@@ -809,7 +809,8 @@ class BertModel(BertPreTrainedModel):
         )
         sequence_output = encoder_outputs[0]
         pooled_output = self.pooler(sequence_output)
-
+        print('*'*100)
+        print(sequence_output, pooled_output, encoder_outputs)
         outputs = (sequence_output, pooled_output,) + encoder_outputs[
             1:
         ]  # add hidden_states and attentions if they are here
